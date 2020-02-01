@@ -3,12 +3,13 @@ package com.om.counter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    public void increaseCounter() {
+    public void increaseCounter(View view) {
         // выводим сообщение
         Toast.makeText(this, "Counter increased", Toast.LENGTH_SHORT).show();
     }
