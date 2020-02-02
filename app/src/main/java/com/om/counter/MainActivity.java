@@ -2,8 +2,12 @@ package com.om.counter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         int action = event.getAction();
         int keyCode = event.getKeyCode();
 
-//        Toast.makeText(this, String.valueOf(action), Toast.LENGTH_SHORT).show();
+
 
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
@@ -51,6 +55,30 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             default:
                 return super.dispatchKeyEvent(event);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater findMenuItems = getMenuInflater();
+        findMenuItems.inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.options:
+                Toast.makeText(this, "Options", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                return true;
+            case R.id.about:
+                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+//TODO: about app xml
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 

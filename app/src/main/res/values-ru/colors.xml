@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primitives -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <!-- Brand colors -->
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#FF9800</color>
+    <color name="colorAccentDark">#FF5722</color>
+</resources>
