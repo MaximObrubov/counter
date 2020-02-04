@@ -1,15 +1,15 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory app:title="@string/handling_options">
     <SwitchPreferenceCompat
+        app:key="hardware_buttons"
         app:defaultValue="true"
         app:icon="@drawable/ic_expand_bundle"
-        app:key="@string/use_hardwave_buttons"
-        app:summary="@string/summary_use_hardwave_buttons"
-        app:title="@string/title_use_hardwave_buttons" />
+        app:summary="@string/summary_use_hardware_buttons"
+        app:title="@string/title_use_hardware_buttons" />
     <SwitchPreferenceCompat
+        app:key="vibration"
         app:icon="@drawable/ic_audio_ring_notif_vibrate"
         app:defaultValue="false"
-        app:key="@string/use_vibration"
         app:title="@string/title_use_vibration" />
 
 </PreferenceCategory>
