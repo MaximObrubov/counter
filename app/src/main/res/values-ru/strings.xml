@@ -2,10 +2,11 @@
     <string name="app_name">Счётчик</string>
     <string name="about">О приложении</string>
     <string name="options">Настройки</string>
-    <string name="common_options">Общие настройки</string>
+    <string name="handling_options">Управление</string>
     <string name="use_hardwave_buttons">Использовать физические кнопки</string>
     <string name="title_use_hardwave_buttons">Использовать физические кнопки</string>
     <string name="summary_use_hardwave_buttons">Возможность использовать каретку громкости в качестве успраления счетчиком</string>
     <string name="use_vibration">Использовать вибро-отклик</string>
     <string name="title_use_vibration">Использовать вибро-отклик</string>
+    <string name="title_activity_settings">Настройки</string>
 </resources>
