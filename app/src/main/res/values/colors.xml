@@ -8,4 +8,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#FF9800</color>
     <color name="colorAccentDark">#FF5722</color>
+    <!-- Shadow -->
+    <color name="text_shadow">#CE000000</color>
 </resources>

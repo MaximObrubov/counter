@@ -9,4 +9,7 @@
     <string name="use_vibration">Use vibro callback</string>
     <string name="title_use_vibration">Use vibro callback</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="zero">0</string>
+    <string name="plus">+</string>
+    <string name="minus">&#8211;</string>
 </resources>

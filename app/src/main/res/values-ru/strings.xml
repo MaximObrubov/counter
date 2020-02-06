@@ -9,4 +9,8 @@
     <string name="use_vibration">Использовать вибро-отклик</string>
     <string name="title_use_vibration">Использовать вибро-отклик</string>
     <string name="title_activity_settings">Настройки</string>
+    <string name="zero">0</string>
+    <string name="plus">+</string>
+    <string name="minus">&#8211;</string>
+
 </resources>
