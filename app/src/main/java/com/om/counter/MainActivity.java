@@ -1,36 +1,56 @@
 package com.om.counter;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.Context;
+import androidx.lifecycle.ViewModelProviders;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
-import android.os.VibrationEffect;
 import android.preference.PreferenceManager;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener{
+import com.om.counter.controllers.CounterController;
+import com.om.counter.model.CounterModel;
 
+public class MainActivity
+        extends AppCompatActivity
+        implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private int VIBRATION_TIME = 50;
-    private int counter = 0;
     private SharedPreferences prefs;
-    private TextView indicator;
+    private CounterController counter;
+    private CounterModel counterModel;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        this.counterModel = ViewModelProviders.of(this).get(CounterModel.class);
+        setupSharedPreferences();
+        this.counter = new CounterController(MainActivity.this, this);
+    }
+
+
+    public CounterModel getCounterModel() {
+        return this.counterModel;
+    }
+
+    public boolean isVibro() {
+        return this.prefs.getBoolean("vibration", false);
+    }
+
 
     /**
      * Increase counter from a view
      * @param view
      */
     public void increaseCounter(View view) {
-        increaseCounter();
+        counter.increase();
     }
 
     /**
@@ -38,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
      * @param view
      */
     public void decreaseCounter(View view) {
-        decreaseCounter();
+        counter.descrease();
     }
 
 
@@ -56,12 +76,12 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         switch (keyCode) {
         case KeyEvent.KEYCODE_VOLUME_UP:
             if (action == KeyEvent.ACTION_UP && useHardware) {
-                increaseCounter();
+                this.counter.increase();
             }
             return true;
         case KeyEvent.KEYCODE_VOLUME_DOWN:
             if (action == KeyEvent.ACTION_DOWN && useHardware) {
-                decreaseCounter();
+                this.counter.descrease();
             }
             return true;
         default:
@@ -91,50 +111,20 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     }
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        this.indicator = (TextView) findViewById(R.id.textview);
-        setupSharedPreferences();
-    }
-
-
     private void setupSharedPreferences() {
-        if (this.prefs == null) {
-            this.prefs = PreferenceManager.getDefaultSharedPreferences(this);
-            this.prefs.registerOnSharedPreferenceChangeListener(this);
-        }
+        this.prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        this.prefs.registerOnSharedPreferenceChangeListener(this);
     }
 
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         this.prefs = sharedPreferences;
+        Toast.makeText(
+            this,
+            "is vibro: " + this.prefs.getBoolean("vibration", false) + "; hardware: " + this.prefs.getBoolean("hardware_buttons", true),
+            Toast.LENGTH_SHORT
+        ).show();
     }
 
-
-    private void increaseCounter() {
-        this.counter++;
-        this.indicator.setText(String.valueOf(this.counter));
-        if (prefs.getBoolean("vibration", true)) vibrate();
-    }
-
-
-    private void decreaseCounter() {
-        if (this.counter > 0) this.counter--;
-        this.indicator.setText(String.valueOf(this.counter));
-        if (prefs.getBoolean("vibration", true)) vibrate();
-    }
-
-    private void vibrate() {
-        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            v.vibrate(VibrationEffect.createOneShot(VIBRATION_TIME, VibrationEffect.DEFAULT_AMPLITUDE));
-        } else {
-            // NOTE: deprecated in API 26
-            v.vibrate(VIBRATION_TIME);
-        }
-    }
 }
