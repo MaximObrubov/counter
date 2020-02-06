@@ -3,6 +3,7 @@
     <string name="about">О приложении</string>
     <string name="options">Настройки</string>
     <string name="handling_options">Управление</string>
+    <string name="layout_options">Отображение</string>
     <string name="use_hardwave_buttons">Использовать физические кнопки</string>
     <string name="title_use_hardware_buttons">Использовать физические кнопки</string>
     <string name="summary_use_hardware_buttons">Возможность использовать каретку громкости в качестве успраления счетчиком</string>
@@ -12,5 +13,6 @@
     <string name="zero">0</string>
     <string name="plus">+</string>
     <string name="minus">&#8211;</string>
+    <string name="use_dark_theme">Темная тема</string>
 
 </resources>

@@ -29,9 +29,10 @@ public class MainActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        this.counterModel = ViewModelProviders.of(this).get(CounterModel.class);
         setupSharedPreferences();
+        boolean isDark = this.prefs.getBoolean("is_dark", false);
+        setContentView(isDark ? R.layout.activity_main_dark : R.layout.activity_main);
+        this.counterModel = ViewModelProviders.of(this).get(CounterModel.class);
         this.counter = new CounterController(MainActivity.this, this);
     }
 

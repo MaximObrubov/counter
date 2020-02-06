@@ -3,6 +3,7 @@
     <string name="about">about</string>
     <string name="options">Options</string>
     <string name="handling_options">Handling</string>
+    <string name="layout_options">Layout</string>
     <string name="use_hardwave_buttons">Use hardware buttons</string>
     <string name="title_use_hardware_buttons">Use hardware buttons</string>
     <string name="summary_use_hardware_buttons">A possibility to use volume curret to control the counter</string>
@@ -12,4 +13,5 @@
     <string name="zero">0</string>
     <string name="plus">+</string>
     <string name="minus">&#8211;</string>
+    <string name="use_dark_theme">Use dark theme</string>
 </resources>

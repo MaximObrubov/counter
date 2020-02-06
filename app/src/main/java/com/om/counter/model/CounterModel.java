@@ -17,4 +17,8 @@ public class CounterModel extends ViewModel {
     public void decrease() {
         if (value > 0) this.value--;
     }
+
+    public void reset() {
+        value = 0;
+    }
 }
