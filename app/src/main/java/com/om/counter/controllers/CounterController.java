@@ -37,6 +37,11 @@ public class CounterController {
         vibrate();
     }
 
+    public void reset() {
+        model.reset();
+        updateView();
+    }
+
     private void updateView() {
         view.setText(String.valueOf(model.getValue()));
     }

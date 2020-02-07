@@ -100,6 +100,12 @@ public class MainActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+        case R.id.action_reset:
+            this.counter.reset();
+            return true;
+        case R.id.action_save:
+            Toast.makeText(this, "Save", Toast.LENGTH_SHORT).show();
+            return true;
         case R.id.options:
             startActivity(new Intent(MainActivity.this, SettingsActivity.class));
             return true;
