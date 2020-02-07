@@ -1,10 +1,17 @@
 package com.om.counter.model;
 
-import androidx.lifecycle.ViewModel;
+import android.content.Context;
+import android.content.SharedPreferences;
 
-public class CounterModel extends ViewModel {
+public class CounterModel {
+    private final String PREFS_NAME = "default";
+    private SharedPreferences prefs;
+    private int value;
 
-    private int value = 0;
+    public CounterModel(Context ctx) {
+        prefs = ctx.getApplicationContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        value = prefs.getInt("value", 0);
+    }
 
     public int getValue() {
        return value;
@@ -12,13 +19,22 @@ public class CounterModel extends ViewModel {
 
     public void increase() {
         this.value++;
+        update();
     }
 
     public void decrease() {
         if (value > 0) this.value--;
+        update();
     }
 
     public void reset() {
         value = 0;
+        update();
+    }
+
+    private void update() {
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("value", value);
+        editor.apply();
     }
 }

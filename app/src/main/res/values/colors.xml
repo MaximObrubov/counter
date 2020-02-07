@@ -2,13 +2,21 @@
 <resources>
     <!-- Primitives -->
     <color name="black">#000000</color>
+    <color name="gray">#383838</color>
+    <color name="grayDark">#1F1F1F</color>
     <color name="white">#FFFFFF</color>
     <!-- Brand colors -->
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorPrimaryLight">#69C5B6</color>
     <color name="colorAccent">#FF9800</color>
-    <color name="colorAccentDark">#FF5722</color>
+    <color name="colorAccentDark">#A26200</color>
+    <!-- Dark Theme -->
+    <color name="colorPrimaryNightTheme">#0E2B28</color>
+    <color name="colorPrimaryDarkNightTheme">#071D1A</color>
+    <color name="colorPrimaryLightNightTheme">#0D463C</color>
+    <color name="colorAccentNightTheme">#520923</color>
+    <color name="colorAccentDarkNightTheme">#300615</color>
     <!-- Shadow -->
     <color name="text_shadow">#6F000000</color>
 </resources>

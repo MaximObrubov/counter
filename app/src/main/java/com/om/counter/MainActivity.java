@@ -1,7 +1,6 @@
 package com.om.counter;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,7 +14,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.om.counter.controllers.CounterController;
-import com.om.counter.model.CounterModel;
 
 public class MainActivity
         extends AppCompatActivity
@@ -23,7 +21,6 @@ public class MainActivity
 
     private SharedPreferences prefs;
     private CounterController counter;
-    private CounterModel counterModel;
 
 
     @Override
@@ -32,19 +29,13 @@ public class MainActivity
         setupSharedPreferences();
         boolean isDark = this.prefs.getBoolean("is_dark", false);
         setContentView(isDark ? R.layout.activity_main_dark : R.layout.activity_main);
-        this.counterModel = ViewModelProviders.of(this).get(CounterModel.class);
-        this.counter = new CounterController(MainActivity.this, this);
-    }
-
-
-    public CounterModel getCounterModel() {
-        return this.counterModel;
+        counter = new CounterController(MainActivity.this, this);
+        counter.updateView();
     }
 
     public boolean isVibro() {
         return this.prefs.getBoolean("vibration", false);
     }
-
 
     /**
      * Increase counter from a view
@@ -127,11 +118,6 @@ public class MainActivity
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         this.prefs = sharedPreferences;
-        Toast.makeText(
-            this,
-            "is vibro: " + this.prefs.getBoolean("vibration", false) + "; hardware: " + this.prefs.getBoolean("hardware_buttons", true),
-            Toast.LENGTH_SHORT
-        ).show();
     }
 
 }

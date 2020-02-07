@@ -20,7 +20,7 @@ public class CounterController {
 
     public CounterController(MainActivity activity, Context ctx) {
         this.isVibro = activity.isVibro();
-        this.model = activity.getCounterModel();
+        this.model = new CounterModel(ctx);
         this.view = activity.findViewById(R.id.counter);
         this.ctx = ctx;
     }
@@ -42,7 +42,7 @@ public class CounterController {
         updateView();
     }
 
-    private void updateView() {
+    public void updateView() {
         view.setText(String.valueOf(model.getValue()));
     }
 

@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/gray"
     tools:context=".MainActivity">
 
     <FrameLayout
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="@color/grayDark"
         android:layout_width="match_parent"
         android:layout_centerHorizontal="true"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,11 +20,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:shadowColor="@color/text_shadow"
+            android:shadowColor="@color/gray"
             android:shadowDx="5"
             android:shadowDy="5"
             android:shadowRadius="10"
-            android:text="@string/zero"
             android:textColor="@color/text_shadow"
             android:textSize="180sp" />
     </FrameLayout>
