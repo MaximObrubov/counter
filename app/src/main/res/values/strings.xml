@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">counter</string>
+    <string name="app_name">Counter</string>
     <string name="about">about</string>
     <string name="options">Options</string>
     <string name="handling_options">Handling</string>
@@ -14,4 +14,7 @@
     <string name="plus">+</string>
     <string name="minus">&#8211;</string>
     <string name="use_dark_theme">Use dark theme</string>
+    <string name="reset">Reset</string>
+    <string name="save">Save</string>
+    <string name="left_menu">Menu</string>
 </resources>

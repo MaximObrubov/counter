@@ -2,6 +2,25 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+<!--    <item-->
+<!--        android:id="@+id/action_left_menu"-->
+<!--        android:orderInCategory="100"-->
+<!--        android:title="@string/left_menu"-->
+<!--        android:icon="@drawable/ic_menu_24px"-->
+<!--        app:showAsAction="ifRoom"/>-->
+    <item
+        android:id="@+id/action_save"
+        android:orderInCategory="200"
+        android:title="@string/save"
+        android:icon="@drawable/ic_save_24px"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_reset"
+        android:orderInCategory="300"
+        android:title="@string/reset"
+        android:icon="@drawable/ic_refresh_24px"
+        app:showAsAction="ifRoom"/>
+
     <item
         android:id="@+id/options"
         android:title="@string/options"/>

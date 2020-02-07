@@ -14,5 +14,8 @@
     <string name="plus">+</string>
     <string name="minus">&#8211;</string>
     <string name="use_dark_theme">Темная тема</string>
+    <string name="reset">Сбросить счетчик</string>
+    <string name="save">Сохранить</string>
+    <string name="left_menu">Menu</string>
 
 </resources>
