@@ -31,36 +31,12 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         app:layout_constraintBottom_toBottomOf="parent">
-        <Button
-            android:id="@+id/button_plus"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_gravity="end"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="35dp"
-            android:background="@drawable/button_plus"
-            android:onClick="increaseCounter"
-            android:text="@string/plus"
-            android:textColor="@color/white"
-            android:textSize="130sp"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+        <fragment
+            android:id="@+id/activity_settings"
+            android:name="com.om.counter.fragments.PlusMinusButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-        <Button
-            android:id="@+id/button_minus"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="start|bottom"
-            android:layout_marginStart="35dp"
-            android:layout_marginBottom="35dp"
-            android:background="@drawable/button_minus"
-            android:onClick="decreaseCounter"
-            android:text="@string/minus"
-            android:textColor="@color/white"
-            android:textSize="50sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent" />
     </FrameLayout>
 
 

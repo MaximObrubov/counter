@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="offset">35dp</dimen>
+    <dimen name="buttons_text_size">130sp</dimen>
+    <!-- Plus button -->
+    <dimen name="plus_button_text_size">130sp</dimen>
+    <dimen name="plus_button_size">300dp</dimen>
+    <!-- Minus button -->
+    <dimen name="minus_button_text_size">50sp</dimen>
+    <dimen name="minus_button_size">80dp</dimen>
+</resources>
