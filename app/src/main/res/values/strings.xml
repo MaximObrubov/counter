@@ -1,19 +1,25 @@
 <resources>
+    <!-- Common -->
     <string name="app_name">Counter</string>
-    <string name="about">about</string>
+    <string name="about">About</string>
     <string name="options">Options</string>
+    <!-- Options activity screen -->
+    <string name="title_activity_settings">Settings</string>
     <string name="handling_options">Handling</string>
     <string name="layout_options">Layout</string>
     <string name="use_hardwave_buttons">Use hardware buttons</string>
     <string name="title_use_hardware_buttons">Use hardware buttons</string>
     <string name="summary_use_hardware_buttons">A possibility to use volume curret to control the counter</string>
-    <string name="use_vibration">Use vibro callback</string>
     <string name="title_use_vibration">Use vibro callback</string>
-    <string name="title_activity_settings">Settings</string>
+    <string name="use_vibration">Use vibro callback</string>
+    <string name="use_dark_theme">Use dark theme</string>
+    <string name="is_lefty">Left hand layout for buttons</string>
+    <string name="is_lefty_summary">"+" button is aligned to left</string>
+
+
     <string name="zero">0</string>
     <string name="plus">+</string>
     <string name="minus">&#8211;</string>
-    <string name="use_dark_theme">Use dark theme</string>
     <string name="reset">Reset</string>
     <string name="save">Save</string>
     <string name="left_menu">Menu</string>

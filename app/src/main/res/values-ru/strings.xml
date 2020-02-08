@@ -1,7 +1,9 @@
 <resources>
+    <!--  Общие  -->
     <string name="app_name">Счётчик</string>
     <string name="about">О приложении</string>
     <string name="options">Настройки</string>
+    <!-- Экран настроек -->
     <string name="handling_options">Управление</string>
     <string name="layout_options">Отображение</string>
     <string name="use_hardwave_buttons">Использовать физические кнопки</string>
@@ -10,6 +12,9 @@
     <string name="use_vibration">Использовать вибро-отклик</string>
     <string name="title_use_vibration">Использовать вибро-отклик</string>
     <string name="title_activity_settings">Настройки</string>
+    <string name="is_lefty">Раскладка для левшей</string>
+    <string name="is_lefty_summary">Кнопка "+" прилипает к левой грани экрана</string>
+
     <string name="zero">0</string>
     <string name="plus">+</string>
     <string name="minus">&#8211;</string>
@@ -17,5 +22,6 @@
     <string name="reset">Сбросить счетчик</string>
     <string name="save">Сохранить</string>
     <string name="left_menu">Menu</string>
+
 
 </resources>

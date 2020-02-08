@@ -22,7 +22,13 @@
             app:key="is_dark"
             app:icon="@drawable/ic_nights_stay_24px"
             app:defaultValue="false"
-            app:title="@string/use_dark_theme" />
+            app:title="@string/use_dark_theme" />        \
+        <SwitchPreferenceCompat
+            app:key="is_lefty"
+            app:icon="@drawable/ic_format_align_left_24px"
+            app:defaultValue="false"
+            app:title="@string/is_lefty"
+            app:summary="@string/is_lefty_summary"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

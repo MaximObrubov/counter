@@ -1,0 +1,36 @@
+<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button_plus"
+        android:layout_width="@dimen/plus_button_size"
+        android:layout_height="@dimen/plus_button_size"
+        android:layout_gravity="start|bottom"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="@dimen/offset"
+        android:background="@drawable/button_plus"
+        android:onClick="increaseCounter"
+        android:text="@string/plus"
+        android:textColor="@color/white"
+        android:textSize="@dimen/buttons_text_size"
+        android:visibility="visible"
+        />
+
+    <Button
+        android:id="@+id/button_minus"
+        android:layout_width="@dimen/minus_button_size"
+        android:layout_height="@dimen/minus_button_size"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="@dimen/offset"
+        android:layout_marginBottom="@dimen/offset"
+        android:background="@drawable/button_minus"
+        android:onClick="decreaseCounter"
+        android:text="@string/minus"
+        android:textColor="@color/white"
+        android:textSize="@dimen/minus_button_text_size"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</FrameLayout>

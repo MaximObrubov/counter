@@ -37,6 +37,10 @@ public class MainActivity
         return this.prefs.getBoolean("vibration", false);
     }
 
+    public boolean isLefty() {
+        return this.prefs.getBoolean("is_lefty", false);
+    }
+
     /**
      * Increase counter from a view
      * @param view
