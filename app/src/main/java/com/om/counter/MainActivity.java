@@ -27,8 +27,8 @@ public class MainActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupSharedPreferences();
-        boolean isDark = this.prefs.getBoolean("is_dark", false);
-        setContentView(isDark ? R.layout.activity_main_dark : R.layout.activity_main);
+        applyTheme();
+        setContentView(R.layout.activity_main);
         counter = new CounterController(MainActivity.this, this);
         counter.updateView();
     }
@@ -113,15 +113,20 @@ public class MainActivity
     }
 
 
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        this.prefs = sharedPreferences;
+        applyTheme();
+    }
+
+
     private void setupSharedPreferences() {
         this.prefs = PreferenceManager.getDefaultSharedPreferences(this);
         this.prefs.registerOnSharedPreferenceChangeListener(this);
     }
 
-
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        this.prefs = sharedPreferences;
+    private void applyTheme() {
+        boolean isDark = this.prefs.getBoolean("is_dark", false);
+        if (isDark) setTheme(com.om.counter.R.style.NightTheme);
     }
-
 }

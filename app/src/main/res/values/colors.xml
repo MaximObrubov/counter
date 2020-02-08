@@ -9,14 +9,16 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorPrimaryLight">#69C5B6</color>
+    <color name="colorPrimaryText">#FFFFFF</color>
     <color name="colorAccent">#FF9800</color>
     <color name="colorAccentDark">#A26200</color>
     <!-- Dark Theme -->
-    <color name="colorPrimaryNightTheme">#0E2B28</color>
-    <color name="colorPrimaryDarkNightTheme">#071D1A</color>
-    <color name="colorPrimaryLightNightTheme">#0D463C</color>
-    <color name="colorAccentNightTheme">#520923</color>
-    <color name="colorAccentDarkNightTheme">#300615</color>
+    <color name="colorPrimaryNightTheme">#474747</color>
+    <color name="colorPrimaryDarkNightTheme">#1C1B1B</color>
+    <color name="colorPrimaryLightNightTheme">#666666</color>
+    <color name="colorPrimaryTextNightTheme">#2F2F2F</color>
+    <color name="colorAccentNightTheme">#37469C</color>
+    <color name="colorAccentDarkNightTheme">#131D53</color>
     <!-- Shadow -->
     <color name="text_shadow">#6F000000</color>
 </resources>
