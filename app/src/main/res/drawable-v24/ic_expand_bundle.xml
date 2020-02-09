@@ -18,7 +18,8 @@ Copyright (C) 2015 The Android Open Source Project
         android:width="14.0dp"
         android:height="14.0dp"
         android:viewportWidth="24.0"
-        android:viewportHeight="24.0">
+        android:viewportHeight="24.0"
+        android:tint="?attr/colorPrimaryDark">
     <path
         android:fillColor="#FF000000"
         android:pathData="M6.8,8.6L8.2,10.0L12.0,6.2l3.9,3.8l1.4,-1.4L12.0,3.4L6.8,8.6zM12.0,20.6l5.3,-5.2L15.8,14.0L12.0,17.8L8.2,14.0l-1.4,1.4L12.0,20.6z"/>

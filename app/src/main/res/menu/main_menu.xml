@@ -8,13 +8,13 @@
 <!--        android:title="@string/left_menu"-->
 <!--        android:icon="@drawable/ic_menu_24px"-->
 <!--        app:showAsAction="ifRoom"/>-->
-    <item
-        android:id="@+id/action_save"
-        android:orderInCategory="200"
-        android:title="@string/save"
-        android:icon="@drawable/ic_save_24px"
-        android:iconTint="@color/white"
-        app:showAsAction="ifRoom"/>
+<!--    <item-->
+<!--        android:id="@+id/action_save"-->
+<!--        android:orderInCategory="200"-->
+<!--        android:title="@string/save"-->
+<!--        android:icon="@drawable/ic_save_24px"-->
+<!--        android:iconTint="@color/white"-->
+<!--        app:showAsAction="ifRoom"/>-->
     <item
         android:id="@+id/action_reset"
         android:orderInCategory="300"

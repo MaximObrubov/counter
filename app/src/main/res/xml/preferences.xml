@@ -13,6 +13,12 @@
             app:icon="@drawable/ic_audio_ring_notif_vibrate"
             app:defaultValue="false"
             app:title="@string/title_use_vibration" />
+        <SwitchPreferenceCompat
+            app:key="use_shake_to_increse"
+            app:icon="@drawable/ic_tap_and_play_24px"
+            app:defaultValue="false"
+            app:title="@string/use_shake"
+            app:summary="@string/use_shake_summary" />
 
     </PreferenceCategory>
     <PreferenceCategory

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.preference.PreferenceManager;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -13,24 +15,56 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.om.counter.APIs.ShakeListener;
 import com.om.counter.controllers.CounterController;
 
 public class MainActivity
         extends AppCompatActivity
         implements SharedPreferences.OnSharedPreferenceChangeListener {
 
+    private ShakeListener shakeListener;
+    private SensorManager sensorManager;
     private SharedPreferences prefs;
     private CounterController counter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setupSharedPreferences();
         applyTheme();
         setContentView(R.layout.activity_main);
         counter = new CounterController(MainActivity.this, this);
         counter.updateView();
+        // Note: accelerometer logic
+        if (prefs.getBoolean("use_shake_to_increse", false)) {
+            sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+            shakeListener = (ShakeListener) new ShakeListener(this, 0.00f, SensorManager.GRAVITY_EARTH, SensorManager.GRAVITY_EARTH);
+            sensorManager.registerListener(
+                    shakeListener,
+                    sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                    SensorManager.SENSOR_DELAY_NORMAL
+            );
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (prefs.getBoolean("use_shake_to_increse", false)) {
+            sensorManager.registerListener(
+                    shakeListener,
+                    sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                    SensorManager.SENSOR_DELAY_NORMAL
+            );
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        if (prefs.getBoolean("use_shake_to_increse", false)) sensorManager.unregisterListener(shakeListener);
+        super.onPause();
     }
 
     public boolean isVibro() {
@@ -39,6 +73,10 @@ public class MainActivity
 
     public boolean isLefty() {
         return this.prefs.getBoolean("is_lefty", false);
+    }
+
+    public CounterController getCounter() {
+        return this.counter;
     }
 
     /**
@@ -98,9 +136,9 @@ public class MainActivity
         case R.id.action_reset:
             this.counter.reset();
             return true;
-        case R.id.action_save:
-            Toast.makeText(this, "Save", Toast.LENGTH_SHORT).show();
-            return true;
+//        case R.id.action_save:
+//            Toast.makeText(this, "Save", Toast.LENGTH_SHORT).show();
+//            return true;
         case R.id.options:
             startActivity(new Intent(MainActivity.this, SettingsActivity.class));
             return true;

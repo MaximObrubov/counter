@@ -15,6 +15,8 @@
     <string name="use_dark_theme">Use dark theme</string>
     <string name="is_lefty">Left hand layout for buttons</string>
     <string name="is_lefty_summary">"+" button is aligned to left</string>
+    <string name="use_shake">Use shake</string>
+    <string name="use_shake_summary">Shake your phone to add 1 to counter</string>
 
 
     <string name="zero">0</string>

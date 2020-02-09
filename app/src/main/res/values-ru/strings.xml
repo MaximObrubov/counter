@@ -14,6 +14,8 @@
     <string name="title_activity_settings">Настройки</string>
     <string name="is_lefty">Раскладка для левшей</string>
     <string name="is_lefty_summary">Кнопка "+" прилипает к левой грани экрана</string>
+    <string name="use_shake">Использовать шейк</string>
+    <string name="use_shake_summary">Встряхните устройство, чтобы добавить +1</string>
 
     <string name="zero">0</string>
     <string name="plus">+</string>
